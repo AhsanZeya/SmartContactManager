@@ -37,9 +37,13 @@ public class MyConfig {
 		
 		http.authorizeRequests().requestMatchers("/admin/**").hasRole("ADMIN")
 		.requestMatchers("/user/**").hasRole("USER")
-		.requestMatchers("/**").permitAll().and().formLogin().and().csrf().disable();
+		.requestMatchers("/**").permitAll().and().formLogin()
+		.loginPage("/signin")
+		.loginProcessingUrl("/dologin")
+//		.failureUrl("/fail")
+		.defaultSuccessUrl("/user/index").and().csrf().disable();
 		
-		http.authenticationProvider(authenticationProvider());
+//		http.authenticationProvider(authenticationProvider());                                                                                    
 		DefaultSecurityFilterChain defaultSecurityFilterChain = http.build();
 		
 		return defaultSecurityFilterChain;

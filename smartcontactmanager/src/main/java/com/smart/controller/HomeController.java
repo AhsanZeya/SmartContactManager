@@ -99,4 +99,10 @@ public class HomeController {
 	}
 	
 	
+	//Handler for Custom Login
+	@GetMapping("/signin")
+	public String customLogin(Model model) {
+		model.addAttribute("title", "Login-Page");
+		return "login";
+	}
 }

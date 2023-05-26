@@ -41,7 +41,7 @@
 				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 				
 				
-				<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/signin}">Login</a></li>
 				
 				<li class="nav-item"><a class="nav-link" th:href="@{/signup}">Signup</a></li>
 			</ul>
@@ -70,3 +70,26 @@
 		<script th:src="@{/js/script.js}"></script>
 </body>
 </html>
+
+<!-- Github command for commit -->
+
+<!-- new project
+ git config --global user.name ""
+ git config --global user.email ""
+ git init
+ git add .   ---- git add smartcontactmanager
+ git status  ---- git status smartcontactmanager
+ git commit -m "First commit"
+ git remote add origin https://github.com/AhsanZeya/SmartContactManager.git
+ git push -u origin master
+
+
+
+
+update  :
+
+ git status       ----- git status smartcontactmanager
+ git add new.html  ---- git add smartcontactmanager
+ git status        ---- git status smartcontactmanager
+ git commit -m "added second some changes"
+ git push origin master --force -->
