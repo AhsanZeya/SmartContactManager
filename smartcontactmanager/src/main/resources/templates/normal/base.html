@@ -12,12 +12,6 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-	
-	
-	<!-- Link to use cdn icon  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	
-	
 <link rel="stylesheet" th:href="@{/css/style.css}"/>
 
 
@@ -44,12 +38,9 @@
 				</a></li>
 				
 				
-				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+				<li class="nav-item"><a class="nav-link"><span th:text="${user.name}"></span></a></li>
 				
-				
-				<li class="nav-item"><a class="nav-link" th:href="@{/signin}">Login</a></li>
-				
-				<li class="nav-item"><a class="nav-link" th:href="@{/signup}">Signup</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/logout}">Logout</a></li>
 			</ul>
 			
 		</div>
@@ -57,7 +48,28 @@
 
 	<!-- End Navbar -->
 
-	<div th:replace="${content}"></div>
+    <!-- sidebar -->
+	<div class="sidebar">
+	    <a href="#" class="item"><i class="fa-regular fa-house"></i> Home</a>
+	    <a href="#" class="item">View Contact</a>
+	    <a href="#" class="item">Add Contact</a>
+	    <a href="#" class="item">Your Profile</a>
+	    <a href="#" class="item">Settings</a>
+	    <a href="#" class="item">Logout</a>
+	    <div class="divider"></div>
+	</div>
+	
+	<!-- END Sidebar -->
+	
+	
+	<!-- content area -->
+	
+	<div class="content">
+	     <div th:replace="${content}"></div>
+	</div>
+	
+	
+	
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
